@@ -27,6 +27,10 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      # IMPORTANT: this permission is mandatory for Trusted Publishing
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -48,6 +52,7 @@ jobs:
         run: poetry run pip --version >/dev/null 2>&1 || rm -rf .venv
       - name: Install Dependencies
         run: poetry install
-      - name: Publish
-        run: |
-          poetry publish --build
+      - name: Build
+        run: poetry build
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
