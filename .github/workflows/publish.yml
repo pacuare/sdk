@@ -35,7 +35,6 @@ jobs:
       - name: Install poetry
         run: |
           pip install poetry
-          echo "::set-env name=PATH::$HOME/.poetry/bin:$PATH"
       - name: Configure poetry
         run: poetry config virtualenvs.in-project true
       - name: Set up cache
