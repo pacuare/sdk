@@ -1,13 +1,13 @@
 [project]
 name = "pacuare"
-version = "0.1.2"
+version = "0.2.0"
 description = "Query the Pacuare Reserve dataset."
 authors = [
     {name = "Aleks Rūtiņš", email = "keeper@farthergate.com"}
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
     "requests (>=2.32.3,<3.0.0)",
     "pandas (>=2.2.3,<3.0.0)"

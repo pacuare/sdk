@@ -12,14 +12,17 @@ class Client:
         self.api_key = api_key
         self.base = base
     
-    def query(self, sql: str) -> pd.DataFrame:
+    def query(self, sql: str, params: list = []) -> pd.DataFrame:
         """Query your database using SQL, returning a Pandas DataFrame of the results."""
-        res = requests.post(self.base + '/api/query?language=sql',
+        res = requests.post(self.base + '/api/query',
                             headers={
                                 'Authorization': 'Bearer ' + self.api_key,
-                                'Content-Type': 'text/sql',
+                                'Content-Type': 'application/json',
                                 'Accept': 'application/json'
                             },
-                            data=sql)
-        
+                            json={
+                                'query': sql,
+                                'params': params
+                            })
+
         return pd.DataFrame.from_records(res.json())
