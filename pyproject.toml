@@ -1,6 +1,6 @@
 [project]
 name = "pacuare"
-version = "0.2.0"
+version = "0.2.1"
 description = "Query the Pacuare Reserve dataset."
 authors = [
     {name = "Aleks Rūtiņš", email = "keeper@farthergate.com"}
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/aleksrutins/pacuare-sdk.git"
+Repository = "https://github.com/pacuare/sdk.git"
 
 [tool.poetry]
 packages = [{include = "pacuare", from = "src"}]
