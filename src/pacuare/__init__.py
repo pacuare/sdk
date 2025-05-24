@@ -23,5 +23,4 @@ class Client:
                                 'params': params
                             })
 
-        print(res.text)
         return pd.DataFrame.from_records(res.json()['values'], columns=res.json()['columns'])
