@@ -1,6 +1,6 @@
 [project]
 name = "pacuare"
-version = "0.2.1"
+version = "0.3.0"
 description = "Query the Pacuare Reserve dataset."
 authors = [
     {name = "Aleks Rūtiņš", email = "keeper@farthergate.com"}
