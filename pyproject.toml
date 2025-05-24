@@ -2,24 +2,27 @@
 name = "pacuare"
 version = "0.3.0"
 description = "Query the Pacuare Reserve dataset."
-authors = [
-    {name = "Aleks Rūtiņš", email = "keeper@farthergate.com"}
-]
-license = {text = "MIT"}
+authors = [{ name = "Aleks Rūtiņš", email = "keeper@farthergate.com" }]
+requires-python = ">=3.12"
 readme = "README.md"
-requires-python = ">=3.9"
+license = { text = "MIT" }
 dependencies = [
     "requests (>=2.32.3,<3.0.0)",
-    "pandas (>=2.2.3,<3.0.0)"
+    "pandas (>=2.2.3,<3.0.0)",
 ]
 
 [project.urls]
 Repository = "https://github.com/pacuare/sdk.git"
 
-[tool.poetry]
-packages = [{include = "pacuare", from = "src"}]
+[tool.hatch.build.targets.sdist]
+include = ["src/pacuare"]
 
+[tool.hatch.build.targets.wheel]
+include = ["src/pacuare"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/pacuare" = "pacuare"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
